@@ -12,6 +12,11 @@ body {
   color: #fff;
   font-family: 'Arial', sans-serif;
   overflow-x: hidden;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 canvas {
@@ -141,65 +146,136 @@ h1 {
   /* Für Firefox */
   background-clip: text;
 }
+
+.main-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  width: 100vw;
+}
+
+@media (max-width: 900px) {
+  .tree-container {
+    transform: scale(0.85);
+    max-width: 98vw;
+    margin-top: 0;
+  }
+  .gothic-title {
+    font-size: 12vw;
+  }
+  #gothicTitle {
+    font-size: 12vw !important;
+  }
+  canvas {
+    width: 98vw !important;
+    height: 48vw !important;
+    max-width: 100vw;
+    max-height: 60vh;
+  }
+}
+
+@media (max-width: 600px) {
+  .tree-container {
+    transform: scale(1);
+    max-width: 100vw;
+    margin-top: 0;
+  }
+  .gothic-title {
+    font-size: 9vw;
+  }
+  #gothicTitle {
+    font-size: 9vw !important;
+  }
+  canvas {
+    width: 98vw !important;
+    height: 54vw !important;
+    max-width: 100vw;
+    max-height: 60vh;
+  }
+}
+
+@media (orientation: portrait) {
+  .main-center {
+    min-height: 90vh;
+  }
+  canvas {
+    height: 54vw !important;
+    max-height: 60vh;
+  }
+}
+
+@media (orientation: landscape) {
+  .main-center {
+    min-height: 80vh;
+  }
+  canvas {
+    height: 38vw !important;
+    max-height: 60vh;
+  }
+}
 </style>
 </head>
 <body>
 
-<div style="position:relative; width:100%;">
-  <canvas id="terra_canvas" width="1200" height="620" style="display:block; margin:0 auto; position:relative; z-index:1;"></canvas>
-  <!-- Gothic Title centered over the animation -->
-  <div id="gothicTitle" class="gothic-title" style="position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); z-index:2; width:100%; text-align:center; pointer-events:none;">TERRASCOPE</div>
-</div>
+<div class="main-center">
+  <div style="position:relative; width:100%; display:flex; flex-direction:column; align-items:center; justify-content:center;">
+    <canvas id="terra_canvas" width="1200" height="620" style="display:block; margin:0 auto; position:relative; z-index:1;"></canvas>
+    <!-- Gothic Title centered over the animation -->
+    <div id="gothicTitle" class="gothic-title" style="position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); z-index:2; width:100%; text-align:center; pointer-events:none;">TERRASCOPE</div>
+  </div>
 
-<div class="tree-container">
-  <details>
-    <summary>Mission & Rationale</summary>
-    <div>Why TerraScope Exists
+  <div class="tree-container">
+    <details>
+      <summary>Mission & Rationale</summary>
+      <div>Why TerraScope Exists
 Europe needs an autonomous, ground-based environmental intelligence layer that complements—not competes with—LEO missions. TerraScope delivers resilient, emission-free observation through a terrestrial optical mesh, enabling real-time insight into climate, agriculture, biodiversity, and crisis situations.</div>
-  </details>
-  <details>
-    <summary>System Architecture</summary>
-    <div>Decentralised Optical & Sensor Network
+    </details>
+    <details>
+      <summary>System Architecture</summary>
+      <div>Decentralised Optical & Sensor Network
 A continental mesh of ground nodes, each capturing high-resolution optical and environmental data. Nodes communicate via secure ground-to-ground links and an optional GEO relay. Edge-processing reduces bandwidth, produces local alerts, and ensures operation even during communication outages.</div>
-  </details>
-  <details>
-    <summary> Development Roadmap</summary>
-    <div>Four Strategic Phases
+    </details>
+    <details>
+      <summary> Development Roadmap</summary>
+      <div>Four Strategic Phases
 	1.	Field Integration – Early prototypes, agricultural pilots, and partner validation.
 	2.	Network Formation – Regional optical and radio linking of nodes.
 	3.	Rollout – Continental coverage, early-warning capabilities, agri-intelligence, climate monitoring.
 	4.	GEO Layer (Optional) – Precision calibration, sky-mapping, large-scale 3D reconstruction.</div>
-  </details>
-  <details>
-    <summary>Environmental & Agricultural Intelligence</summary>
-    <div>Real-Time Insights for Soil, Crops & Ecosystems
+    </details>
+    <details>
+      <summary>Environmental & Agricultural Intelligence</summary>
+      <div>Real-Time Insights for Soil, Crops & Ecosystems
 Nodes collect long-interval image sequences and sensor data to analyse soil structure, crop performance, water dynamics, biodiversity patterns, and field variability. Designed to help farmers, researchers, and agencies optimise interventions and track environmental change.</div>
-  </details>
-  <details>
-    <summary>Collaboration & Partnerships</summary>
-    <div>Opportunities for Technical, Scientific & Policy Actors
+    </details>
+    <details>
+      <summary>Collaboration & Partnerships</summary>
+      <div>Opportunities for Technical, Scientific & Policy Actors
 TerraScope offers integration points for photonics, edge-AI, hydrology, biodiversity science, manufacturing, logistics, governance, and EU knowledge hubs. The system is designed for joint development, shared indicators, and coordinated validation.</div>
-  </details>
-  <details>
-    <summary>Research Integration</summary>
-    <div>Climate, Biodiversity & Hydrology Alignment
+    </details>
+    <details>
+      <summary>Research Integration</summary>
+      <div>Climate, Biodiversity & Hydrology Alignment
 Supports predictive modelling, anomaly detection, long-term datasets, and multi-site observation campaigns. Enables harmonised protocols and cross-border collaboration across academic and institutional partners.</div>
-  </details>
-  <details>
-    <summary>Governance, Security & Ethic</summary>
-    <div>Legal Compliance, Data Stewardship & Cybersecurity
+    </details>
+    <details>
+      <summary>Governance, Security & Ethic</summary>
+      <div>Legal Compliance, Data Stewardship & Cybersecurity
 Framework for GDPR alignment, transparent data handling, secure telemetry, ethical AI integration, and environmental-risk protocols. Ensures responsible management of decentralised environmental networks.</div>
-  </details>
-  <details>
-    <summary>Impact & Communication</summary>
-    <div>Societal Value, Public Engagement & Knowledge Transfer
+    </details>
+    <details>
+      <summary>Impact & Communication</summary>
+      <div>Societal Value, Public Engagement & Knowledge Transfer
 Transforms complex observations into accessible tools for communities, farmers, decision-makers, and educators. Encourages citizen involvement and strengthens environmental literacy and policy impact across EU regions.</div>
-  </details>
-  <details>
-    <summary>Implementation & Deployment</summary>
-    <div>Scalable Production, Operations & Field Management
+    </details>
+    <details>
+      <summary>Implementation & Deployment</summary>
+      <div>Scalable Production, Operations & Field Management
 Covers manufacturing pathways, circular-economy principles, installation logistics, multi-site coordination, QA procedures, and operational risk monitoring. Ensures robust deployment at continental scale with long-term maintainability.</div>
-  </details>
+    </details>
+  </div>
 </div>
 
 <div class="footer">
@@ -242,12 +318,25 @@ let W=0,H=0;
 
 function fitCanvas(){
   const r = canvas.getBoundingClientRect();
-  W = Math.max(600, Math.floor(r.width * 1.2)); // Animation um 20% vergrößert
-  H = Math.max(300, Math.floor(r.height * 1.2));
-  canvas.width = Math.floor(W*dpr);
-  canvas.height = Math.floor(H*dpr);
-  canvas.style.width = r.width + 'px'; // Canvas bleibt gleich groß
-  canvas.style.height = r.height + 'px';
+  let w = Math.max(320, Math.floor(r.width));
+  let h = Math.max(180, Math.floor(r.height));
+  // Responsive Anpassung für mobile Geräte
+  if(window.innerWidth < 600) {
+    w = Math.floor(window.innerWidth * 0.98);
+    h = Math.floor(window.innerHeight * 0.38);
+  } else if(window.innerWidth < 900) {
+    w = Math.floor(window.innerWidth * 0.98);
+    h = Math.floor(window.innerHeight * 0.48);
+  } else {
+    w = Math.max(600, Math.floor(r.width * 1.2));
+    h = Math.max(300, Math.floor(r.height * 1.2));
+  }
+  canvas.width = Math.floor(w*dpr);
+  canvas.height = Math.floor(h*dpr);
+  canvas.style.width = w + 'px';
+  canvas.style.height = h + 'px';
+  W = w;
+  H = h;
   ctx.setTransform(dpr,0,0,dpr,0,0);
 }
 fitCanvas();
